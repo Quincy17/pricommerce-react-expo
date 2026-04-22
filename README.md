@@ -1,50 +1,191 @@
-# Welcome to your Expo app 👋
+<div align="center">
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+# 🛍️ PriCommerce
 
-## Get started
+**Aplikasi e-commerce cross-platform modern dengan pembayaran QRIS**
 
-1. Install dependencies
+[![React Native](https://img.shields.io/badge/React%20Native-0.81-61DAFB?style=flat-square&logo=react)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-SDK%2054-000020?style=flat-square&logo=expo)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Zustand](https://img.shields.io/badge/Zustand-State%20Management-orange?style=flat-square)](https://zustand-demo.pmnd.rs/)
 
-   ```bash
-   npm install
-   ```
+</div>
 
-2. Start the app
+---
 
-   ```bash
-   npx expo start
-   ```
+## 📱 Tentang Aplikasi
 
-In the output, you'll find options to open the app in a
+**PriCommerce** adalah aplikasi e-commerce mobile yang dibangun di atas **Expo** dan **React Native**, mendukung platform **iOS** dan **Android** secara bersamaan. Aplikasi ini dilengkapi fitur browse produk, keranjang belanja, checkout, hingga pembayaran menggunakan **QRIS** (Quick Response Code Indonesian Standard).
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## ✨ Fitur Utama
 
-## Get a fresh project
+| Fitur | Deskripsi |
+|-------|-----------|
+| 🏠 **Home** | Hero banner otomatis, kategori produk, daftar produk unggulan & terbaru |
+| 🔍 **Katalog** | Grid semua produk dengan search, filter kategori, dan sorting |
+| 📦 **Detail Produk** | Foto produk, rating, deskripsi, ulasan, pilih jumlah |
+| 🛒 **Keranjang** | Kelola item, ubah jumlah, gratis ongkir otomatis ≥ Rp500.000 |
+| 💳 **Checkout** | Form alamat pengiriman, pilih ekspedisi (Reguler/Express/Same Day) |
+| 📱 **Bayar QRIS** | QR Code dinamis, countdown 15 menit, kompatibel semua bank & e-wallet |
+| ✅ **Order Success** | Animasi konfirmasi, nomor pesanan, navigasi ke riwayat |
+| 👤 **Profil** | Statistik belanja, riwayat pesanan, menu pengaturan |
 
-When you're ready, run:
+---
 
-```bash
-npm run reset-project
+## 🗂️ Struktur Proyek
+
+```
+pricommerce/
+├── app/
+│   ├── _layout.tsx              # Root layout (Stack navigator + tema)
+│   ├── checkout.tsx             # Form checkout & pilih ekspedisi
+│   ├── (tabs)/
+│   │   ├── _layout.tsx          # Tab navigator (4 tab + cart badge)
+│   │   ├── index.tsx            # Home Screen
+│   │   ├── explore.tsx          # Katalog produk
+│   │   ├── cart.tsx             # Keranjang belanja
+│   │   └── profile.tsx          # Profil & riwayat pesanan
+│   ├── product/
+│   │   └── [id].tsx             # Detail produk (dynamic route)
+│   └── payment/
+│       ├── qris.tsx             # Halaman pembayaran QRIS
+│       └── success.tsx          # Konfirmasi pesanan berhasil
+│
+├── components/
+│   ├── ProductCard.tsx          # Card produk di grid
+│   ├── CartItem.tsx             # Item di keranjang + qty adjuster
+│   ├── QRISDisplay.tsx          # QR Code + timer + instruksi
+│   ├── CategoryFilter.tsx       # Filter kategori horizontal scroll
+│   ├── OrderSummary.tsx         # Ringkasan harga di checkout
+│   └── HeroBanner.tsx           # Banner promo auto-slide
+│
+├── store/
+│   ├── cartStore.ts             # Zustand: state keranjang
+│   └── orderStore.ts            # Zustand: state & riwayat pesanan
+│
+├── data/
+│   └── products.ts              # Mock data 20 produk + kategori
+│
+└── constants/
+    └── theme.ts                 # Design tokens (warna, format harga)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🛠️ Tech Stack
 
-To learn more about developing your project with Expo, look at the following resources:
+- **[Expo SDK 54](https://expo.dev/)** — Framework React Native
+- **[Expo Router v6](https://expo.github.io/router/)** — File-based navigation
+- **[React Native 0.81](https://reactnative.dev/)** — Core framework
+- **[TypeScript](https://www.typescriptlang.org/)** — Type safety
+- **[Zustand](https://zustand-demo.pmnd.rs/)** — State management (cart & order)
+- **[react-native-qrcode-svg](https://github.com/awesomejerry/react-native-qrcode-svg)** — Generate QR Code QRIS
+- **[expo-linear-gradient](https://docs.expo.dev/versions/latest/sdk/linear-gradient/)** — Gradient UI
+- **[react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/)** — Animasi halus
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 🚀 Cara Menjalankan
 
-Join our community of developers creating universal apps.
+### Prerequisites
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Node.js 18+
+- npm atau yarn
+- [Expo Go](https://expo.dev/go) di HP (iOS/Android) **atau** emulator
+
+### Instalasi
+
+```bash
+# Clone repositori
+git clone <repo-url>
+cd my-expo-app
+
+# Install dependencies
+npm install
+```
+
+### Menjalankan Aplikasi
+
+```bash
+# Jalankan dev server
+npm start
+# atau
+npx expo start
+
+# Untuk Android emulator
+npm run android
+
+# Untuk iOS simulator (macOS only)
+npm run ios
+```
+
+Scan QR Code yang muncul di terminal menggunakan aplikasi **Expo Go** di HP kamu.
+
+---
+
+## 💳 Implementasi QRIS
+
+Aplikasi ini menggunakan QRIS format **EMV QR Code** sesuai standar Bank Indonesia.
+
+### Mode Demo (Saat Ini)
+- QR Code di-generate secara **lokal** di device
+- Pembayaran **otomatis terkonfirmasi dalam 5 detik** (simulasi)
+- Countdown timer **15 menit** sebelum expired
+
+### Untuk Produksi
+Untuk penggunaan nyata, string QRIS harus berasal dari **Payment Gateway** resmi:
+
+| Provider | Dokumentasi |
+|----------|-------------|
+| Midtrans | https://midtrans.com/id/api |
+| Xendit | https://www.xendit.co/id/developers |
+| DOKU | https://developers.doku.com |
+| Faspay | https://www.faspay.co.id |
+
+> **Catatan:** Merchant wajib terdaftar di Bank Indonesia / penyedia QRIS resmi untuk menggunakan QRIS di produksi.
+
+---
+
+## 📋 Alur Checkout
+
+```
+Home / Katalog
+    → Detail Produk → Add to Cart
+        → Keranjang
+            → Checkout (isi alamat + pilih ekspedisi)
+                → Bayar dengan QRIS (scan QR Code)
+                    → Pembayaran Berhasil ✅
+                        → Riwayat Pesanan (tab Profil)
+```
+
+---
+
+## 🎨 Design System
+
+| Token | Value |
+|-------|-------|
+| Background | `#0F172A` (Deep Navy) |
+| Surface | `#1E293B` |
+| Accent | `#FF6B2B` (Electric Orange) |
+| Text | `#F1F5F9` |
+| Success | `#10B981` |
+| Star | `#FBBF24` |
+
+---
+
+## 📦 Kategori Produk
+
+- 📱 Elektronik
+- 👗 Fashion
+- 👟 Sneakers
+- ⌚ Aksesoris
+- 💄 Kecantikan
+- 🏋️ Olahraga
+
+---
+
+## 📄 Lisensi
+
+MIT License © 2026 PriCommerce
