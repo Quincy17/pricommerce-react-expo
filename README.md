@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🛍️ PriCommerce
+# PriCommerce
 
 **Aplikasi e-commerce cross-platform modern dengan pembayaran QRIS**
 
@@ -13,28 +13,28 @@
 
 ---
 
-## 📱 Tentang Aplikasi
+## Tentang Aplikasi
 
 **PriCommerce** adalah aplikasi e-commerce mobile yang dibangun di atas **Expo** dan **React Native**, mendukung platform **iOS** dan **Android** secara bersamaan. Aplikasi ini dilengkapi fitur browse produk, keranjang belanja, checkout, hingga pembayaran menggunakan **QRIS** (Quick Response Code Indonesian Standard).
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
 | Fitur | Deskripsi |
 |-------|-----------|
-| 🏠 **Home** | Hero banner otomatis, kategori produk, daftar produk unggulan & terbaru |
-| 🔍 **Katalog** | Grid semua produk dengan search, filter kategori, dan sorting |
-| 📦 **Detail Produk** | Foto produk, rating, deskripsi, ulasan, pilih jumlah |
-| 🛒 **Keranjang** | Kelola item, ubah jumlah, gratis ongkir otomatis ≥ Rp500.000 |
-| 💳 **Checkout** | Form alamat pengiriman, pilih ekspedisi (Reguler/Express/Same Day) |
-| 📱 **Bayar QRIS** | QR Code dinamis, countdown 15 menit, kompatibel semua bank & e-wallet |
-| ✅ **Order Success** | Animasi konfirmasi, nomor pesanan, navigasi ke riwayat |
-| 👤 **Profil** | Statistik belanja, riwayat pesanan, menu pengaturan |
+| **Home** | Hero banner otomatis, kategori produk, daftar produk unggulan & terbaru |
+| **Katalog** | Grid semua produk dengan search, filter kategori, dan sorting |
+| **Detail Produk** | Foto produk, rating, deskripsi, ulasan, pilih jumlah |
+| **Keranjang** | Kelola item, ubah jumlah, gratis ongkir otomatis >= Rp500.000 |
+| **Checkout** | Form alamat pengiriman, pilih ekspedisi (Reguler/Express/Same Day) |
+| **Bayar QRIS** | QR Code dinamis, countdown 15 menit, kompatibel semua bank & e-wallet |
+| **Order Success** | Animasi konfirmasi, nomor pesanan, navigasi ke riwayat |
+| **Profil** | Statistik belanja, riwayat pesanan, menu pengaturan |
 
 ---
 
-## 🗂️ Struktur Proyek
+## Struktur Proyek
 
 ```
 pricommerce/
@@ -74,7 +74,7 @@ pricommerce/
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **[Expo SDK 54](https://expo.dev/)** — Framework React Native
 - **[Expo Router v6](https://expo.github.io/router/)** — File-based navigation
@@ -87,7 +87,7 @@ pricommerce/
 
 ---
 
-## 🚀 Cara Menjalankan
+## Cara Menjalankan
 
 ### Prerequisites
 
@@ -125,16 +125,18 @@ Scan QR Code yang muncul di terminal menggunakan aplikasi **Expo Go** di HP kamu
 
 ---
 
-## 💳 Implementasi QRIS
+## Implementasi QRIS
 
 Aplikasi ini menggunakan QRIS format **EMV QR Code** sesuai standar Bank Indonesia.
 
 ### Mode Demo (Saat Ini)
+
 - QR Code di-generate secara **lokal** di device
 - Pembayaran **otomatis terkonfirmasi dalam 5 detik** (simulasi)
 - Countdown timer **15 menit** sebelum expired
 
 ### Untuk Produksi
+
 Untuk penggunaan nyata, string QRIS harus berasal dari **Payment Gateway** resmi:
 
 | Provider | Dokumentasi |
@@ -148,21 +150,21 @@ Untuk penggunaan nyata, string QRIS harus berasal dari **Payment Gateway** resmi
 
 ---
 
-## 📋 Alur Checkout
+## Alur Checkout
 
 ```
 Home / Katalog
-    → Detail Produk → Add to Cart
-        → Keranjang
-            → Checkout (isi alamat + pilih ekspedisi)
-                → Bayar dengan QRIS (scan QR Code)
-                    → Pembayaran Berhasil ✅
-                        → Riwayat Pesanan (tab Profil)
+    -> Detail Produk -> Add to Cart
+        -> Keranjang
+            -> Checkout (isi alamat + pilih ekspedisi)
+                -> Bayar dengan QRIS (scan QR Code)
+                    -> Pembayaran Berhasil
+                        -> Riwayat Pesanan (tab Profil)
 ```
 
 ---
 
-## 🎨 Design System
+## Design System
 
 | Token | Value |
 |-------|-------|
@@ -171,21 +173,21 @@ Home / Katalog
 | Accent | `#FF6B2B` (Electric Orange) |
 | Text | `#F1F5F9` |
 | Success | `#10B981` |
-| Star | `#FBBF24` |
+| Star/Rating | `#FBBF24` |
 
 ---
 
-## 📦 Kategori Produk
+## Kategori Produk
 
-- 📱 Elektronik
-- 👗 Fashion
-- 👟 Sneakers
-- ⌚ Aksesoris
-- 💄 Kecantikan
-- 🏋️ Olahraga
+- Elektronik
+- Fashion
+- Sneakers
+- Aksesoris
+- Kecantikan
+- Olahraga
 
 ---
 
-## 📄 Lisensi
+## Lisensi
 
 MIT License © 2026 PriCommerce
