@@ -99,8 +99,8 @@ pricommerce/
 
 ```bash
 # Clone repositori
-git clone <repo-url>
-cd my-expo-app
+git clone https://github.com/Quincy17/pricommerce-react-expo
+cd pricommerce-react-expo
 
 # Install dependencies
 npm install
